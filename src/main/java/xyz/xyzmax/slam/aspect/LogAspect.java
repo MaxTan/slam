@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class ResultAspect {
+public class LogAspect {
 
     private final Logger log = LoggerFactory.getLogger(getClass());
     private final Gson gson = new Gson();
