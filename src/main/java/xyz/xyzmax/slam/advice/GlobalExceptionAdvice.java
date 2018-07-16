@@ -1,8 +1,5 @@
 package xyz.xyzmax.slam.advice;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -31,31 +28,7 @@ public class GlobalExceptionAdvice {
         }
         result.setErrorMessage(e.getMessage());
         result.setStatusCode(500);
-        log.error(getStatckTrace(e));
+        log.error("found error..", e);
         return result;
-    }
-
-    private String getStatckTrace(Exception e) {
-        StringWriter sw = null;
-        PrintWriter pw = null;
-        try {
-            sw = new StringWriter();
-            pw = new PrintWriter(sw);
-            e.printStackTrace(pw);
-            pw.flush();
-            sw.flush();
-        } finally {
-            if (sw != null) {
-                try {
-                    sw.close();
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
-            }
-            if (pw != null) {
-                pw.close();
-            }
-        }
-        return sw.toString();
     }
 }
