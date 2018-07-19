@@ -13,7 +13,8 @@
             "stopOnEntry": false,
             "mainClass": "xyz.xyzmax.slam.SlamApplication",
             "projectName": "slam",
-            "args": ""
+            "args": "",
+            "preLaunchTask": "build"
         },
         {
             "type": "java",
